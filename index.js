@@ -5,7 +5,9 @@ const altura = document.querySelector('input#altura');
 const peso = document.querySelector('input#peso');
 const resultado = document.querySelector('div#resultado');
 
-function calcularImc() {
+function calcularImc(event) {
+    event.preventDefault();    
+
     if (altura.value === '') {
         alert('Insira sua altura!');
         return;
@@ -77,9 +79,9 @@ function calcularImc() {
     }
 }
 
-window.addEventListener('submit', function (event) {
-    // Previne o comportamento padrão de recarregar a página
-    event.preventDefault();
+// form.addEventListener('submit', function (event) {
+//     // Previne o comportamento padrão de recarregar a página
+//     event.preventDefault();
 
-    calcularImc();
-});
+//     calcularImc();
+// });
