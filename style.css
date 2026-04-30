@@ -1,5 +1,4 @@
 body {
-    /* background-color: #fefae0; */
     background-color: #ffd3ad;
     font: 20px Arial;
     color: #bc6c25;
@@ -22,16 +21,57 @@ section {
     background-color: #faedcd;
 }
 
+input {
+    background-color: #fefae0;
+    color: #bc6c25;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    color: #bc6c25;
+}
+
+input:focus {
+    /* Remove a borda padrão */
+    outline: none;
+    /* Sombra */
+    box-shadow: 0 0 5px #bc6c25;
+}
+
+/* Remove o spin box (flexas de aumentar/diminuir o valor) */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 #calcular {
     width: 100px;
     height: 50px;
-    border-radius: 5%;
-    /* background-color: #dda15e; */
+    border-radius: 10px;
+    background-color: #faedcd;
+    color: #bc6c25;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* box-shadow: 5px 5px 10px #bc6c25; */
     border: 1px solid #bc6c25;
+}
+
+#calcular:hover {
+    cursor: pointer;
 }
 
 /* Evento ao clicar */
@@ -61,6 +101,4 @@ th {
 .highligth {
     color: #fefae0;
     background-color: #bc6c25;
-    /* Trocar a cor da linha da borda */
-    /* border: 1px solid #fefae0; */
 }

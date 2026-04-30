@@ -1,11 +1,11 @@
 maxHeight = 2.72;
 maxWeight = 635;
 
-function calcularImc() {
-    const altura = document.querySelector('input#altura');
-    const peso = document.querySelector('input#peso');
-    const resultado = document.querySelector('div#resultado');
+const altura = document.querySelector('input#altura');
+const peso = document.querySelector('input#peso');
+const resultado = document.querySelector('div#resultado');
 
+function calcularImc() {
     if (altura.value === '') {
         alert('Insira sua altura!');
         return;
@@ -41,42 +41,45 @@ function calcularImc() {
     const imc = peso.value / (altura.value * altura.value);
 
     // toFixed: retorna o número com uma representação em string com as casas decimais especificadas
-    resultado.innerHTML = `Seu IMC é de ${imc.toFixed(1)} Kg/M²`;
+    resultado.innerHTML = `Seu IMC é de ${imc.toFixed(1)} kg/m²`;
 
+    //                   document.querySelectorAll
     const highLigthRow = document.querySelector('tr.highligth');
 
     // Remove a classe de destaque
     if (highLigthRow !== null) {
-        highLigthRow.classList = '';
+        highLigthRow.classList.remove('highligth');
     }
 
     if (imc < 18.5) {
         const row = document.querySelector('tr#magreza');
         row.classList.add('highligth');
     }
-
-    if (18.5 <= imc && imc <= 24.9) {
+    else if (imc < 25) {
         const row = document.querySelector('tr#normal');
         row.classList.add('highligth');
     }
-
-    if (25 <= imc && imc <= 29.9) {
+    else if (imc < 30) {
         const row = document.querySelector('tr#sobrepeso');
         row.classList.add('highligth');
     }
-
-    if (30 <= imc && imc <= 34.9) {
+    else if (imc < 35) {
         const row = document.querySelector('tr#obesidade-i');
         row.classList.add('highligth');
     }
-
-    if (35 <= imc && imc <= 39.9) {
+    else if (imc < 40) {
         const row = document.querySelector('tr#obesidade-ii');
         row.classList.add('highligth');
     }
-
-    if (40 <= imc) {
+    else if (40 <= imc) {
         const row = document.querySelector('tr#obesidade-iii');
         row.classList.add('highligth');
     }
 }
+
+window.addEventListener('submit', function (event) {
+    // Previne o comportamento padrão de recarregar a página
+    event.preventDefault();
+
+    calcularImc();
+});

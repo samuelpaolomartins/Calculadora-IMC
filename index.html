@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,23 +9,20 @@
 </head>
 
 <body>
-    <script src="index.js"></script>
-
     <header>
         <h1>Calculadora IMC</h1>
     </header>
 
     <section>
-        <div>
-            <p>Insira sua altura (metros):
-                <input type="number" id="altura" placeholder="Ex: 1,77">
-            </p>
-            <p>Insira seu peso (Kg)
-                <input type="number" id="peso" placeholder="Ex: 65">
-            </p>
-            <!-- <input type="button" value="Calcular"> -->
-            <div id="calcular" onclick="calcularImc()">Calcular</div>
-        </div>
+        <form>
+            <!-- O label aumenta a área clicável, ou seja, se o usuário clicar em cima do texto o foco do cursor será colocado em cima da caixa de texto -->
+            <label for="altura">Insira sua altura (metros):</label>
+            <!-- step="any" remove restrições para números com casas decimais -->
+            <input type="number" inputmode="numeric" id="altura" placeholder="Ex: 1,77" step="any">
+            <label for="peso">Insira seu peso (kg):</label>
+            <input type="number" id="peso" placeholder="Ex: 65" step="any">
+            <button id="calcular">Calcular</button>
+        </form>
         <div id="resultado"></div>
         <div>
             <table id="imc">
@@ -60,6 +57,8 @@
             </table>
         </div>
     </section>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
