@@ -1,0 +1,66 @@
+body {
+    /* background-color: #fefae0; */
+    background-color: #ffd3ad;
+    font: 20px Arial;
+    color: #bc6c25;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    /* Espaço ao redor do elemento */
+    margin: auto;
+    /* Largura do componente */
+    width: 500px;
+    /* Raio da borada */
+    border-radius: 10px;
+    /* Espaço ao redor do conteúdo do elemento */
+    padding: 15px;
+    box-shadow: 5px 5px 10px #bc6c25;
+    background-color: #faedcd;
+}
+
+#calcular {
+    width: 100px;
+    height: 50px;
+    border-radius: 5%;
+    /* background-color: #dda15e; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 5px 5px 10px #bc6c25; */
+    border: 1px solid #bc6c25;
+}
+
+/* Evento ao clicar */
+#calcular:active {
+    color: #fefae0;
+    background-color: #bc6c25;
+}
+
+#resultado {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table {
+    /* Mescla as bordas das células adjacentes da tabela em uma única borda compartilhada */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #bc6c25;
+    text-align: left;
+    padding: 8px;
+}
+
+.highligth {
+    color: #fefae0;
+    background-color: #bc6c25;
+    /* Trocar a cor da linha da borda */
+    /* border: 1px solid #fefae0; */
+}
